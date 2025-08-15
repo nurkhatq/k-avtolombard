@@ -188,7 +188,7 @@ export default async function handler(req, res) {
     // Отправляем письмо
     await transporter.sendMail({
       from: `"Сайт Автоломбард" <${GMAIL_USER}>`,
-      to: 'dnurhat140@gmail.com',
+      to: 'kapitalavtolombard@mail.ru',
       subject: `⚡ Новая заявка: ${clientName || 'Клиент'} | ${clientPhone || 'Телефон не указан'}`,
       html: htmlBody,
       text: `Новая заявка\n\nИмя: ${clientName}\nТелефон: ${clientPhone}\n${carBrand ? `Авто: ${carBrand}\n` : ''}${carYear ? `Год: ${carYear}\n` : ''}${carMileage ? `Пробег: ${carMileage}\n` : ''}\nВремя: ${new Date().toLocaleString('ru-RU')}`
